@@ -434,6 +434,11 @@ def ConfigureAndBuild(target_arch, target_os, host_os, host_arch, parallel_jobs,
       '--enable-demuxer=ogg,matroska,wav,flac,mp3,mov',
       '--enable-parser=opus,vorbis,flac,mpegaudio',
 
+      # Popcorn Time codecs
+      '--enable-decoder=aac,ac3,mp3,h264,hevc,mpeg4,mpegvideo,msmpeg4v1,msmpeg4v2,msmpeg4v3,dca,flac',
+      '--enable-demuxer=aac,mp3,mp4,mpegvideo,mpegts,dts,dtshd,mov,flac,avi,flv',
+      '--enable-parser=aac,ac3,h263,h264,hvec,mp3,mpegaudio,mpeg4video,dca,flac',
+
       # Setup include path so Chromium's libopus can be used.
       '--extra-cflags=-I' +
       os.path.join(CHROMIUM_ROOT_DIR, 'third_party/opus/src/include'),
